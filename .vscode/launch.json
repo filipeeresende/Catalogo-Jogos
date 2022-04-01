@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net5.0/ApiCatalogoJogos.dll",
+            "program": "${workspaceFolder}/ApiJogo/bin/Debug/net6.0/ApiJogo.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/ApiJogo",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

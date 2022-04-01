@@ -1,11 +1,11 @@
 using System;
 
-namespace ApiCatalogoJogos.ViewModel
+namespace Domain.v1.Dto.ViewModel
 {
     public class JogoViewModel
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
         public string Produtora { get; set; }
         public double Preco { get; set; }
     }
@@ -13,4 +13,3 @@ namespace ApiCatalogoJogos.ViewModel
 
 
 
-//dto 

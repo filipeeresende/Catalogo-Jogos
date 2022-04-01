@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ApiCatalogoJogos
+namespace ApiJogos
 {
     public class Program
     {

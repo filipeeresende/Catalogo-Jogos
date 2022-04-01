@@ -1,21 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ApiCatalogoJogos.Repositories;
-using ApiCatalogoJogos.Services;
-using ExemploApiCatalogoJogos.Repositories;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Domain.v1.Interfaces.Repositories;
+using Domain.v1.Interfaces.Services;
+using Domain.v1.Repositories;
+using Domain.v1.Services;
+using Infrastructure.Entites;
 using Microsoft.OpenApi.Models;
 
-namespace ApiCatalogoJogos
+namespace ApiJogos
 {
     public class Startup
     {
@@ -26,27 +16,25 @@ namespace ApiCatalogoJogos
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IJogoService, JogoService>();
             services.AddScoped<IJogoRepository, JogoRepository>();
-
+            services.AddDbContext<JOGO_CATALOGDbContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiCatalogoJogos", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiJogos", Version = "v1" });
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiCatalogoJogos v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiJogos v1"));
             }
 
             app.UseHttpsRedirection();

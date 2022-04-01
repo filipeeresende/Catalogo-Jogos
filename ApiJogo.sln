@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiJogo", "ApiJogo\ApiJogo.csproj", "{8520B762-F61A-4D0F-9B0D-D7BD599CC419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{0562D3BE-E886-4071-BB59-2501FBA0E700}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{3E35E279-BB10-4F1C-8DE4-9BB577E8E8AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8520B762-F61A-4D0F-9B0D-D7BD599CC419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8520B762-F61A-4D0F-9B0D-D7BD599CC419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8520B762-F61A-4D0F-9B0D-D7BD599CC419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8520B762-F61A-4D0F-9B0D-D7BD599CC419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0562D3BE-E886-4071-BB59-2501FBA0E700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0562D3BE-E886-4071-BB59-2501FBA0E700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0562D3BE-E886-4071-BB59-2501FBA0E700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0562D3BE-E886-4071-BB59-2501FBA0E700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E35E279-BB10-4F1C-8DE4-9BB577E8E8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E35E279-BB10-4F1C-8DE4-9BB577E8E8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E35E279-BB10-4F1C-8DE4-9BB577E8E8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E35E279-BB10-4F1C-8DE4-9BB577E8E8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA2EB8AB-7FCF-4907-8157-B90974E989EE}
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 using System;
 
-namespace ApiCatalogoJogos.Exceptions
+namespace Domain.Exceptions
 {
     public class JogoJaCadastradoException : Exception
     {
