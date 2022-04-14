@@ -3,6 +3,7 @@ using Domain.v1.Interfaces.Services;
 using Domain.v1.Repositories;
 using Domain.v1.Services;
 using Infrastructure.Entites;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
 namespace ApiJogos
@@ -26,6 +27,10 @@ namespace ApiJogos
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiJogos", Version = "v1" });
             });
+            services.Configure<ApiBehaviorOptions>(o =>
+            {
+                o.SuppressModelStateInvalidFilter = true;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,6 +52,7 @@ namespace ApiJogos
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

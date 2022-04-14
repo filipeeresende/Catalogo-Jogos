@@ -21,7 +21,7 @@ namespace Domain.v1.Services
             IList<JogoViewModel> jogos = await _jogoRepository.Obter();
 
             if (!jogos.Any())
-                throw new JogoNaoCadastradoException();
+                throw new JogoNaoExisteException();
 
             return jogos.Select(jogo => new JogoViewModel
             {

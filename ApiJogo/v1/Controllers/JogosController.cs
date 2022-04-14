@@ -3,6 +3,7 @@ using Domain.v1.Dto.InputModel;
 using Domain.v1.Dto.ViewModel;
 using Domain.v1.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
+using Portal_Terceiros_API.Tools.ExceptionHandler;
 
 namespace ApiJogo.v1.Controllers
 {
@@ -20,14 +21,14 @@ namespace ApiJogo.v1.Controllers
         [HttpGet]
         public async Task<ActionResult<IList<JogoViewModel>>> Obter()
         {
-            try 
+            try
             {
                 IList<JogoViewModel> jogos = await _jogoService.Obter();
-               
+
                 return Ok(jogos);
             }
-            catch (JogoNaoCadastradoException ex)
-            { 
+            catch (JogoNaoExisteException ex)
+            {
                 return NotFound(ex.Message);
             }
         }
@@ -46,17 +47,22 @@ namespace ApiJogo.v1.Controllers
                 return NotFound(ex.Message);
             }
         }
-
+        [ValidateModelState]
         [HttpPost]
         public async Task<ActionResult<JogoViewModel>> InsertGame(JogoInputModel jogoInputModel)
         {
             try
             {
+
                 JogoViewModel jogo = await _jogoService.Inserir(jogoInputModel);
 
                 return Ok(jogo);
             }
             catch (JogoNaoCadastradoException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (JogoJaCadastradoException ex)
             {
                 return NotFound(ex.Message);
             }
@@ -76,7 +82,7 @@ namespace ApiJogo.v1.Controllers
                 return NotFound(ex.Message);
             }
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<ActionResult> ApagarJogo(int id)
         {
